@@ -77,7 +77,9 @@ Printing methods:
 ### Printer class functionality and implementation
 Printer class is used to print both simple messages and dynamically built ASCII tables for various ways of presenting the transaction history.<br><br>
 External library has been used to dynamically build ASCII tables:
-- https://github.com/vdmeer/asciitable
+<br> 
+- https://github.com/vdmeer/asciitable 
+<br> 
 - http://www.vandermeer.de/projects/skb/java/asciitable/features.html 
 
 
