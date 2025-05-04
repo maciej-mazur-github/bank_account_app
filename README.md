@@ -49,7 +49,7 @@ The program offers several console printing options to show the transactions his
 |[![](https://img.shields.io/badge/junit-%23E33332?logo=junit5&logoColor=white)](https://junit.org/junit5/) | For unit testing|
 |[![AssertJ](https://img.shields.io/badge/AssertJ-ED8B00?style=for-the-badge&logoColor=white)](https://assertj.github.io/doc/)| For unit testing assertions |
 |[![Mockito](https://img.shields.io/badge/Mockito-51803a?style=for-the-badge&logoColor=white)](https://site.mockito.org/)| For unit testing mocks |
-|[![ASCII Table](https://img.shields.io/badge/AsciiTable-51803a?style=for-the-badge&logoColor=white)](http://www.vandermeer.de/projects/skb/java/asciitable/features.html)| External library to build dynamic ASCII tables when printing transaction history in various ways; http://www.vandermeer.de/projects/skb/java/asciitable/features.html https://github.com/vdmeer/asciitable |
+|[![ASCII Table](https://img.shields.io/badge/AsciiTable-51803a?style=for-the-badge&logoColor=white)](http://www.vandermeer.de/projects/skb/java/asciitable/features.html)| External library to build dynamic ASCII tables when printing transaction history in various ways; <br> http://www.vandermeer.de/projects/skb/java/asciitable/features.html <br> https://github.com/vdmeer/asciitable |
 
 
 ## Some Information On Implementation Details
