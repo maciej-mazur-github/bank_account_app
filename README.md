@@ -61,18 +61,18 @@ There are 2 constructors. Both inject Printer class dependency as it made unit t
 - Account(List<PreTransaction> preTransactions, Printer printer) - builds an account with the pre-existing transactions. You can create your own list of PreTransaction objects as an input or you can use **RandomTransactionsGenerator.generateRandomPreTransactions()** static method to generate 50 such objects randomly. The constructor then will iterate over all this list elements and will attempt to perform each of the preTransactions based on each one's transaction type. Whenever the operation is possible, it will be registered in Account's class private list of transactions. The chronology of operations will remain intact. Whenever the operation is **not** possible, the respective information will be printed to the console and operation will not be registered in the Account's class private list of operations.
 
 ### Account class public methods
-- makeDeposit(BigDecimal amount, String description) - transaction date will be set as LocalDateTime.now(), so there is no possibility for the user to re-write transaction history. Attempt to deposit zero amount or a negative one will result in disregarding the transaction request and in printing the respective message to the console
-- makeWithdrawal(BigDecimal amount, String description) - same as above in terms of setting the date. Withdrawal amount cannot be zero. If the amount is provided as a negative one, this amount will be automatically set to positive one. The assumption is that the client cannot have a debit on the account, therefore it is not possible to withdraw the amount exceeding the current account balance. 
-- withdrawAllFunds() - same as above in terms of setting the date. You cannot perform full withdrawal when the account balance is zero.
+- **makeDeposit(BigDecimal amount, String description)** - transaction date will be set as LocalDateTime.now(), so there is no possibility for the user to re-write transaction history. Attempt to deposit zero amount or a negative one will result in disregarding the transaction request and in printing the respective message to the console
+- **makeWithdrawal(BigDecimal amount, String description)** - same as above in terms of setting the date. Withdrawal amount cannot be zero. If the amount is provided as a negative one, this amount will be automatically set to positive one. The assumption is that the client cannot have a debit on the account, therefore it is not possible to withdraw the amount exceeding the current account balance. 
+- **withdrawAllFunds()** - same as above in terms of setting the date. You cannot perform full withdrawal when the account balance is zero.
 
 Whenever the requested transaction turns out to be valid, the respective message will be printed to the console.
 
 Printing methods:
-- printAllTransactionHistory() - prints all the transaction history, with no filters
-- printAllDeposits() - prints deposits only, with no time range filter
-- printAllWithdrawals() - prints withdrawals (**including full withdrawals**) only, with no time range filter
-- printTransactionsInTimeRange(LocalDate startTime, LocalDate endTime) - allows to print transactions filtered by time range
-- printTransactionsByTimeRangeAndType(LocalDate start, LocalDate end, TransactionType type) - allows to print transactions filtered by time range and also by transaction type
+- **printAllTransactionHistory()** - prints all the transaction history, with no filters
+- **printAllDeposits()** - prints deposits only, with no time range filter
+- **printAllWithdrawals()** - prints withdrawals (**including full withdrawals**) only, with no time range filter
+- **printTransactionsInTimeRange(LocalDate startTime, LocalDate endTime)** - allows to print transactions filtered by time range
+- **printTransactionsByTimeRangeAndType(LocalDate start, LocalDate end, TransactionType type)** - allows to print transactions filtered by time range and also by transaction type
 
 ### Printer class functionality and implementation
 Printer class is used to print both simple messages and dynamically built ASCII tables for various ways of presenting the transaction history.<br><br>
