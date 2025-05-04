@@ -1,11 +1,8 @@
-package societegeneralekata.app;
+package kata.app;
 
-import societegeneralekata.io.Printer;
-import societegeneralekata.model.Account;
-import societegeneralekata.utils.RandomTransactionsGenerator;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import kata.io.Printer;
+import kata.model.Account;
+import kata.utils.RandomTransactionsGenerator;
 
 public class Application {
     public static void main(String[] args) {

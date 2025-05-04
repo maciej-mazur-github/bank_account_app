@@ -1,18 +1,22 @@
 import org.junit.jupiter.api.Test;
-import societegeneralekata.io.Printer;
-import societegeneralekata.model.Account;
-import societegeneralekata.model.SumsOfTransactionsForPrinting;
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
-import societegeneralekata.utils.Calculator;
-import societegeneralekata.utils.Filter;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
+import kata.io.Printer;
+import kata.model.Account;
+import kata.model.SumsOfTransactionsForPrinting;
+import kata.model.Transaction;
+import kata.model.TransactionType;
+import kata.utils.Calculator;
+import kata.utils.Filter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyList;
 
 public class PrinterTest {
 
@@ -121,5 +125,65 @@ public class PrinterTest {
         assertThat(outputStream.toString()).contains(sumsOfTransactionsForPrinting.getSumOfWithdrawals().toString());
 
         System.setOut(originalOut);
+    }
+
+    @Test
+    void shouldHaveProperNonNullAndNullArgumentsWhenPrintingAllTypesOfTransactionsWithoutTimeRange() {
+        // given
+        Printer printerMock = Mockito.mock(Printer.class);
+        Account testAccount = new Account(printerMock);
+
+        ArgumentCaptor<SumsOfTransactionsForPrinting> sumsOfTransactionsForPrintingArgumentCaptor = ArgumentCaptor.forClass(
+                SumsOfTransactionsForPrinting.class);
+        ArgumentCaptor<LocalDateTime> startDateCaptor = ArgumentCaptor.forClass(LocalDateTime.class);
+        ArgumentCaptor<LocalDateTime> endDateCaptor = ArgumentCaptor.forClass(LocalDateTime.class);
+
+        // when
+        testAccount.printAllTransactionHistory();
+        testAccount.printAllDeposits();
+        testAccount.printAllWithdrawals();
+
+        // then
+        Mockito.verify(printerMock, Mockito.times(3)).printTransactionHistory(
+                anyList(),
+                sumsOfTransactionsForPrintingArgumentCaptor.capture(),
+                startDateCaptor.capture(),
+                endDateCaptor.capture());
+
+        BigDecimal allTransactionsBalance = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(0).getBalance();
+        BigDecimal allTransactionsDeposits = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(0).getSumOfDeposits();
+        BigDecimal allTransactionsWithdrawals = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(0).getSumOfWithdrawals();
+        LocalDateTime allTransactionsStartDate = startDateCaptor.getAllValues().get(0);
+        LocalDateTime allTransactionsEnDate = endDateCaptor.getAllValues().get(0);
+
+        assertThat(allTransactionsBalance).isNotNull();
+        assertThat(allTransactionsDeposits).isNotNull();
+        assertThat(allTransactionsWithdrawals).isNotNull();
+        assertThat(allTransactionsStartDate).isNull();
+        assertThat(allTransactionsEnDate).isNull();
+
+        BigDecimal allDepositsBalance = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(1).getBalance();
+        BigDecimal allDepositsDeposits = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(1).getSumOfDeposits();
+        BigDecimal allDepositsWithdrawals = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(1).getSumOfWithdrawals();
+        LocalDateTime allDepositsStartDate = startDateCaptor.getAllValues().get(1);
+        LocalDateTime allDepositsEnDate = endDateCaptor.getAllValues().get(1);
+
+        assertThat(allDepositsBalance).isNull();
+        assertThat(allDepositsDeposits).isNotNull();
+        assertThat(allDepositsWithdrawals).isNull();
+        assertThat(allDepositsStartDate).isNull();
+        assertThat(allDepositsEnDate).isNull();
+
+        BigDecimal allWithdrawalsBalance = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(2).getBalance();
+        BigDecimal allWithdrawalsDeposits = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(2).getSumOfDeposits();
+        BigDecimal allWithdrawalsWithdrawals = sumsOfTransactionsForPrintingArgumentCaptor.getAllValues().get(2).getSumOfWithdrawals();
+        LocalDateTime allWithdrawalsStartDate = startDateCaptor.getAllValues().get(2);
+        LocalDateTime allWithdrawalsEnDate = endDateCaptor.getAllValues().get(2);
+
+        assertThat(allWithdrawalsBalance).isNull();
+        assertThat(allWithdrawalsDeposits).isNull();
+        assertThat(allWithdrawalsWithdrawals).isNotNull();
+        assertThat(allWithdrawalsStartDate).isNull();
+        assertThat(allWithdrawalsEnDate).isNull();
     }
 }

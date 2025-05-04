@@ -1,17 +1,18 @@
-package societegeneralekata.model;
+package kata.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-// For generating actual transactions pre-existing when program starts
 @AllArgsConstructor
 @Getter
-public class PreTransaction {
+public class Transaction implements Serializable {
     private LocalDateTime date;
     private String description;
     private BigDecimal amount;
+    private BigDecimal balance;
     private TransactionType type;
 }

@@ -1,9 +1,9 @@
-package societegeneralekata.model;
+package kata.model;
 
 import org.apache.commons.lang3.SerializationUtils;
-import societegeneralekata.io.Printer;
-import societegeneralekata.utils.Calculator;
-import societegeneralekata.utils.Filter;
+import kata.io.Printer;
+import kata.utils.Calculator;
+import kata.utils.Filter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Account {

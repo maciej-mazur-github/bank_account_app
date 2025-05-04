@@ -1,9 +1,9 @@
 import org.junit.jupiter.api.Test;
-import societegeneralekata.io.Printer;
-import societegeneralekata.model.Account;
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
-import societegeneralekata.utils.Filter;
+import kata.io.Printer;
+import kata.model.Account;
+import kata.model.Transaction;
+import kata.model.TransactionType;
+import kata.utils.Filter;
 
 import java.time.LocalDateTime;
 import java.util.List;

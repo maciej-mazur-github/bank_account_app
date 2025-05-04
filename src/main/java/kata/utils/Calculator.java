@@ -1,8 +1,8 @@
-package societegeneralekata.utils;
+package kata.utils;
 
-import societegeneralekata.model.SumsOfTransactionsForPrinting;
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
+import kata.model.SumsOfTransactionsForPrinting;
+import kata.model.Transaction;
+import kata.model.TransactionType;
 
 import java.math.BigDecimal;
 import java.util.List;

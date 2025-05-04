@@ -1,7 +1,7 @@
-package societegeneralekata.utils;
+package kata.utils;
 
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
+import kata.model.Transaction;
+import kata.model.TransactionType;
 
 import java.time.LocalDateTime;
 import java.util.List;

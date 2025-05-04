@@ -1,4 +1,4 @@
-package societegeneralekata.model;
+package kata.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

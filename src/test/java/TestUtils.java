@@ -1,7 +1,7 @@
-import societegeneralekata.model.Account;
-import societegeneralekata.model.PreTransaction;
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
+import kata.model.Account;
+import kata.model.PreTransaction;
+import kata.model.Transaction;
+import kata.model.TransactionType;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

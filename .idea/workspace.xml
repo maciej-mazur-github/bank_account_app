@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba9463dd-5f12-4d5e-bac1-7fe57b2ecdbf" name="Changes" comment="" />
+    <list default="true" id="ba9463dd-5f12-4d5e-bac1-7fe57b2ecdbf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/societegeneralekata/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/societegeneralekata/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PrinterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PrinterTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -48,11 +57,11 @@
 }</component>
   <component name="RunManager" selected="JUnit.PrinterTest">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="societegeneralekata.app.Application" />
+      <option name="MAIN_CLASS_NAME" value="kata.app.Application" />
       <module name="SocieteGeneraleKata" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="societegeneralekata.app.*" />
+          <option name="PATTERN" value="kata.app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

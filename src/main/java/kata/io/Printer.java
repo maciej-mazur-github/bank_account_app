@@ -1,12 +1,12 @@
-package societegeneralekata.io;
+package kata.io;
 
 import de.vandermeer.asciitable.AsciiTable;
 import de.vandermeer.asciitable.CWC_LongestLine;
 import de.vandermeer.asciithemes.u8.U8_Grids;
 import de.vandermeer.skb.interfaces.transformers.textformat.TextAlignment;
-import societegeneralekata.model.SumsOfTransactionsForPrinting;
-import societegeneralekata.model.Transaction;
-import societegeneralekata.model.TransactionType;
+import kata.model.SumsOfTransactionsForPrinting;
+import kata.model.Transaction;
+import kata.model.TransactionType;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
